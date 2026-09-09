@@ -9,6 +9,7 @@ const playfairDisplay = Playfair_Display({
   display: "swap",
   fallback: ["Georgia", "serif"],
   weight: ["400", "500", "600", "700", "800", "900"],
+  preload: true,
 });
 
 const dmSans = DM_Sans({
@@ -17,6 +18,7 @@ const dmSans = DM_Sans({
   display: "swap",
   fallback: ["system-ui", "-apple-system", "sans-serif"],
   weight: ["400", "500", "600", "700"],
+  preload: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -81,12 +83,6 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   manifest: "/site.webmanifest",
-  other: {
-    "rel:preload": [
-      { href: "https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtUA.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
-      { href: "https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTs.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
-    ],
-  },
 };
 
 export const viewport: Viewport = {
