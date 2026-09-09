@@ -30,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://l-classic.lounge"),
+  metadataBase: new URL("https://velocity-landing-kappa.vercel.app"),
   title: {
     default: "L-CLASSIC — Where Time Slows. Where Craft Speaks.",
     template: "%s | L-CLASSIC",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://l-classic.lounge",
+    url: "https://velocity-landing-kappa.vercel.app",
     siteName: "L-CLASSIC",
     title: "L-CLASSIC — Where Time Slows. Where Craft Speaks.",
     description:

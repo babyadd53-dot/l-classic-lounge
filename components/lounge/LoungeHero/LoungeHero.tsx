@@ -3,7 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, Suspense, useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { hero } from "@/content/lounge-copy";
 import { ArrowDown, Sparkles } from "lucide-react";
@@ -203,9 +203,31 @@ function CanvasFallback() {
   );
 }
 
-export function LoungeHero() {
-  const [canvasReady, setCanvasReady] = useState(false);
+function HeroCanvas() {
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <CanvasFallback />;
+  }
+
+  return (
+    <Canvas
+      className="w-full h-full"
+      camera={{ position: [0, 0, 5], fov: 50 }}
+      gl={{ antialias: true, alpha: true, preserveDrawingBuffer: false }}
+      shadows={false}
+      dpr={[1, 1.5]}
+    >
+      <LoungeAmbientScene />
+    </Canvas>
+  );
+}
+
+export function LoungeHero() {
   return (
     <section
       id="hero"
@@ -213,20 +235,7 @@ export function LoungeHero() {
       aria-labelledby="hero-title"
     >
       <div className="absolute inset-0 z-0" aria-hidden="true">
-        {!canvasReady ? (
-          <CanvasFallback />
-        ) : (
-          <Canvas
-            className="w-full h-full"
-            camera={{ position: [0, 0, 5], fov: 50 }}
-            gl={{ antialias: true, alpha: true, preserveDrawingBuffer: false }}
-            shadows={false}
-            dpr={[1, 1.5]}
-            onCreated={() => setCanvasReady(true)}
-          >
-            <LoungeAmbientScene />
-          </Canvas>
-        )}
+        <HeroCanvas />
       </div>
 
       <HeroContent />

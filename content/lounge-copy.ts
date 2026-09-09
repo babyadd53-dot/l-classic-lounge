@@ -126,7 +126,7 @@ export const events = {
     {
       date: "2025-01-18",
       time: "19:00",
-      title: "Vertical Tasting: Macallan 18–30 Year",
+      title: "Vertical Tasting: Macallan 18-30 Year",
       description: "Six expressions spanning three decades. Guided by brand ambassador. 12 seats.",
       type: "tasting",
       capacity: "12",
@@ -190,8 +190,8 @@ export const reservation = {
   hours: {
     label: "Hours",
     days: [
-      { day: "Monday–Wednesday", time: "17:00 - 02:00" },
-      { day: "Thursday–Saturday", time: "17:00 - 03:00" },
+      { day: "Monday-Wednesday", time: "17:00 - 02:00" },
+      { day: "Thursday-Saturday", time: "17:00 - 03:00" },
       { day: "Sunday", time: "Closed" },
     ],
   },
@@ -236,6 +236,6 @@ export const footer = {
       { href: "#accessibility", label: "Accessibility" },
     ],
   },
-  copyright: "© 2025 L-CLASSIC. All rights reserved.",
+  copyright: "&copy; 2025 L-CLASSIC. All rights reserved.",
   madeWith: "Crafted with restraint.",
 };
