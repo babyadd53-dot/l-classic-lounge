@@ -1,11 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "name": "velocity-landing",
+  "name": "l-classic-lounge",
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "regions": ["iad1", "sfo1", "lhr1", "hnd1", "sin1"],
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 30
