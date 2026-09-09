@@ -90,6 +90,7 @@ function CategoryTab({ category, isActive, onClick }: { category: Category; isAc
   return (
     <button
       onClick={onClick}
+      role="tab"
       className={cn(
         "relative flex flex-col items-center gap-3 px-6 py-5 rounded-xl border transition-all duration-300",
         isActive
