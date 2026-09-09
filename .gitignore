@@ -54,3 +54,4 @@ logs
 
 # Turbo
 .turbo
+.vercel

@@ -3,12 +3,14 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, Suspense } from "react";
+import { useEffect, Suspense, useState } from "react";
 import { cn } from "@/lib/utils";
 import { hero } from "@/content/lounge-copy";
 import { ArrowDown, Sparkles } from "lucide-react";
-import { Canvas } from "@react-three/fiber";
-import { LoungeAmbientScene } from "./LoungeAmbientScene";
+import dynamic from "next/dynamic";
+
+const Canvas = dynamic(() => import("@react-three/fiber").then(m => m.Canvas), { ssr: false });
+const LoungeAmbientScene = dynamic(() => import("./LoungeAmbientScene").then(m => m.LoungeAmbientScene), { ssr: false });
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -192,7 +194,7 @@ function HeroContent() {
   );
 }
 
-function AmbientCanvasFallback() {
+function CanvasFallback() {
   return (
     <div className="absolute inset-0 bg-gradient-hero" aria-hidden="true">
       <div className="absolute inset-0 bg-gradient-glow" />
@@ -202,6 +204,8 @@ function AmbientCanvasFallback() {
 }
 
 export function LoungeHero() {
+  const [canvasReady, setCanvasReady] = useState(false);
+
   return (
     <section
       id="hero"
@@ -209,17 +213,20 @@ export function LoungeHero() {
       aria-labelledby="hero-title"
     >
       <div className="absolute inset-0 z-0" aria-hidden="true">
-        <Suspense fallback={<AmbientCanvasFallback />}>
+        {!canvasReady ? (
+          <CanvasFallback />
+        ) : (
           <Canvas
             className="w-full h-full"
             camera={{ position: [0, 0, 5], fov: 50 }}
             gl={{ antialias: true, alpha: true, preserveDrawingBuffer: false }}
             shadows={false}
             dpr={[1, 1.5]}
+            onCreated={() => setCanvasReady(true)}
           >
             <LoungeAmbientScene />
           </Canvas>
-        </Suspense>
+        )}
       </div>
 
       <HeroContent />

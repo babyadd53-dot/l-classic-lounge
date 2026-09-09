@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       "An invitation to the quiet exceptional. Rare spirits, aged cigars, late-night dining. Members only.",
     images: [
       {
-        url: "/img/og-lounge.jpg",
+        url: "/img/og-lounge.svg",
         width: 1200,
         height: 630,
         alt: "L-CLASSIC Lounge - Amber light, walnut, brass",
@@ -73,14 +73,20 @@ export const metadata: Metadata = {
     title: "L-CLASSIC — Where Time Slows. Where Craft Speaks.",
     description:
       "An invitation to the quiet exceptional.",
-    images: ["/img/og-lounge.jpg"],
+    images: ["/img/og-lounge.svg"],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   manifest: "/site.webmanifest",
+  other: {
+    "rel:preload": [
+      { href: "https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtUA.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { href: "https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTs.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+    ],
+  },
 };
 
 export const viewport: Viewport = {

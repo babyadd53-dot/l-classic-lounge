@@ -108,14 +108,14 @@ export const gallery = {
   headline: "Gallery",
   subheadline: "Moments suspended in amber light.",
   images: [
-    { src: "/img/gallery-1.jpg", alt: "Main lounge seating area", width: 1200, height: 800 },
-    { src: "/img/gallery-2.jpg", alt: "Back bar with rare spirits", width: 800, height: 1200 },
-    { src: "/img/gallery-3.jpg", alt: "Cigar humidor interior", width: 1200, height: 800 },
-    { src: "/img/gallery-4.jpg", alt: "Private dining alcove", width: 1200, height: 800 },
-    { src: "/img/gallery-5.jpg", alt: "Vinyl collection and audio", width: 800, height: 1200 },
-    { src: "/img/gallery-6.jpg", alt: "Brass and leather detail", width: 1200, height: 800 },
-    { src: "/img/gallery-7.jpg", alt: "Entrance and reception", width: 1200, height: 800 },
-    { src: "/img/gallery-8.jpg", alt: "Champagne and caviar service", width: 800, height: 1200 },
+    { src: "/img/gallery-1.svg", alt: "Main lounge seating area", width: 1200, height: 800 },
+    { src: "/img/gallery-2.svg", alt: "Back bar with rare spirits", width: 800, height: 1200 },
+    { src: "/img/gallery-3.svg", alt: "Cigar humidor interior", width: 1200, height: 800 },
+    { src: "/img/gallery-4.svg", alt: "Private dining alcove", width: 1200, height: 800 },
+    { src: "/img/gallery-5.svg", alt: "Vinyl collection and audio", width: 800, height: 1200 },
+    { src: "/img/gallery-6.svg", alt: "Brass and leather detail", width: 1200, height: 800 },
+    { src: "/img/gallery-7.svg", alt: "Entrance and reception", width: 1200, height: 800 },
+    { src: "/img/gallery-8.svg", alt: "Champagne and caviar service", width: 800, height: 1200 },
   ],
 };
 
@@ -190,8 +190,8 @@ export const reservation = {
   hours: {
     label: "Hours",
     days: [
-      { day: "Monday–Wednesday", time: "17:00 – 02:00" },
-      { day: "Thursday–Saturday", time: "17:00 – 03:00" },
+      { day: "Monday–Wednesday", time: "17:00 - 02:00" },
+      { day: "Thursday–Saturday", time: "17:00 - 03:00" },
       { day: "Sunday", time: "Closed" },
     ],
   },
